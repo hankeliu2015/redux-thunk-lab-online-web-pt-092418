@@ -14,10 +14,12 @@
 import React, { Component } from 'react'
 
 class CatList extends Component {
+ debugger
+
   render () {
-    const list = this.props.catPics.map((cat, index) => <li  key={index}> {cat.title} </li> )
+    // const list = this.props.catPics.map((cat, index) => <li  key={index}> {cat.title} </li> )
     return (
-      <div>{list}</div>
+      <div>{this.props.catPics.title}</div>
     )
   }
 }
