@@ -11,7 +11,7 @@
 //   }
 // }
 
-// // hacker news fetch testing:
+// // hacker news fetch testing for a single story:
 
 export function fetchCats() {
   return (dispatch) => {

@@ -10,7 +10,7 @@
 // }
 // export default CatList
 
-//Hacker news testing:
+//Hacker news testing for a single story:
 import React, { Component } from 'react'
 
 class CatList extends Component {
