@@ -32,25 +32,36 @@ export function fetchCats() {
     return (
       fetch('https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty')
       .then(response => response.json())
-      .then(storyIds => storyIds.map(loadStory))
-        // dispatch({type: 'FETCH_CATS',payload: storyIds}))
-    )
+      .then(storyIds => {
+        // debugger;
+        storyIds.map(function(id) {
+          // debugger
+          return (
+          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
+          .then(response => response.json())
+          .then(story => {
+            console.log(story);
+            dispatch({type: 'FETCH_STORY', payload: story})
+            })
+          )     //return
+        })      //storyIds.map
+      })        //storyIds =>
+    )           //2nd return from above
   }
 }
 
-function loadStory(id) {
-  // debugger
-  console.log(id)
-  
-  return (dispatch) => {
-    dispatch({type: 'LOADING_STORY'});
-    return (
-      fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
-      .then(response => response.json())
-      .then(story => {
-        console.log(story);
-        dispatch({type: 'FETCH_STORY', payload: story})
-      })
-    )
-  }
-}
+// //testing syntax 
+// function loadStory(id) {
+//   console.log(id)
+//   return (dispatch) => {
+//     // dispatch({type: 'LOADING_STORY'});
+//     return (
+//       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
+//       .then(response => response.json())
+//       .then(story => {
+//         console.log(story);
+//         dispatch({type: 'FETCH_STORY', payload: story})
+//       })
+//     )
+//   }
+// }

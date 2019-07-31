@@ -18,9 +18,9 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">CatBook</a>
+              <h4>Hacker News Jobs</h4>
               <hr></hr>
-              {this.props.loading ? "...loading" : <CatList catPics={this.props.catPics} />}
+              {this.props.loading ? "...loading" : <CatList catPics={this.props.stories} />}
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -33,7 +33,8 @@ const mapStateToProps = state => {
 
   return {
     catPics: state.cats.pictures,
-    loading: state.cats.loading
+    loading: state.cats.loading,
+    stories: state.cats.stories
   }
 }
 

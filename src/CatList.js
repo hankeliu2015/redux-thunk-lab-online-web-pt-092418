@@ -35,13 +35,13 @@
 import React, { Component } from 'react'
 
 class CatList extends Component {
- debugger
+ // debugger
 
   render () {
-    const list = this.props.catPics.map((cat, index) => <li  key={index}> {index+1}.  Story ID: {cat} </li> )
+    // const list = this.props.catPics.map((cat, index) => <li  key={index}> {index+1}.  Story ID: {cat} </li> )
     return (
       <div>
-        {list}
+        <p>News</p>
       </div>
     )
   }
