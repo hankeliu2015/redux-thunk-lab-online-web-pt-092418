@@ -18,7 +18,7 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <h4>Hacker News Jobs</h4>
+              <h4>Hacker News Asks</h4>
               <hr></hr>
               {this.props.loading ? "...loading" : <CatList catPics={this.props.stories} />}
             </Navbar.Brand>
