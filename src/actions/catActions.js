@@ -33,9 +33,7 @@ export function fetchCats() {
       fetch('https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty')
       .then(response => response.json())
       .then(storyIds => {
-        // debugger;
         storyIds.map(function(id) {
-          // debugger
           return (
           fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
           .then(response => response.json())
@@ -50,7 +48,7 @@ export function fetchCats() {
   }
 }
 
-// //testing syntax 
+// //testing syntax
 // function loadStory(id) {
 //   console.log(id)
 //   return (dispatch) => {

@@ -30,7 +30,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-
+ // debugger
   return {
     catPics: state.cats.pictures,
     loading: state.cats.loading,

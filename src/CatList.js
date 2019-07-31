@@ -38,10 +38,11 @@ class CatList extends Component {
  // debugger
 
   render () {
-    // const list = this.props.catPics.map((cat, index) => <li  key={index}> {index+1}.  Story ID: {cat} </li> )
+    const list = this.props.catPics.map((cat, index) => <li  key={index}> {cat.id}: {cat.title} </li> )
     return (
       <div>
-        <p>News</p>
+        <h4>Show News Contents</h4>
+        {list}
       </div>
     )
   }

@@ -1,4 +1,4 @@
-export default (state={stories: {}, loading: false, pictures: []}, action) => {
+export default (state={stories: [], loading: false, pictures: []}, action) => {
   switch(action.type) {
 
     case 'LOADING_CATS':
@@ -10,7 +10,8 @@ export default (state={stories: {}, loading: false, pictures: []}, action) => {
       return {loading: false, pictures: action.payload}
 
     case 'FETCH_STORY':
-      return {loading:false, stories: {...state.stories}}
+    // debugger
+      return {loading:false, stories: [...state.stories, action.payload]}
 
     default:
       return state;
