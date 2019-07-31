@@ -38,8 +38,10 @@ export function fetchCats() {
   }
 }
 
-export function loadStory(id) {
-
+function loadStory(id) {
+  // debugger
+  console.log(id)
+  
   return (dispatch) => {
     dispatch({type: 'LOADING_STORY'});
     return (
