@@ -32,7 +32,23 @@ export function fetchCats() {
     return (
       fetch('https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty')
       .then(response => response.json())
-      .then(cats => dispatch({type: 'FETCH_CATS',payload: cats}))
+      .then(storyIds => storyIds.map(loadStory))
+        // dispatch({type: 'FETCH_CATS',payload: storyIds}))
+    )
+  }
+}
+
+export function loadStory(id) {
+
+  return (dispatch) => {
+    dispatch({type: 'LOADING_STORY'});
+    return (
+      fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
+      .then(response => response.json())
+      .then(story => {
+        console.log(story);
+        dispatch({type: 'FETCH_STORY', payload: story})
+      })
     )
   }
 }

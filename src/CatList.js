@@ -42,11 +42,6 @@ class CatList extends Component {
     return (
       <div>
         {list}
-        // <li>Story ID: {this.props.catPics.id}</li>
-        // <li>Title: {this.props.catPics.title}</li>
-        // <li>URL: {this.props.catPics.url}</li>
-        // <li>Score: {this.props.catPics.score}</li>
-
       </div>
     )
   }
